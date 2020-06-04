@@ -9,6 +9,8 @@ import { ClientService } from './services/client.service';
 import { ProductListeComponent } from './product-items/product-liste/product-liste.component';
 import { ProductService } from './services/product.service';
 import { ProductsHomeComponent } from './product-items/products-home/products-home.component';
+import { LoginComponent } from './components/login/login.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,10 @@ import { ProductsHomeComponent } from './product-items/products-home/products-ho
     ProductListeComponent,
     
     ProductsHomeComponent,
+    
+    LoginComponent,
+    
+    PagenotfoundComponent,
     
     
   ],
