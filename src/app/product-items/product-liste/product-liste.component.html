@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"><br></nav>
+<br><br>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th> 
+        </th>
+        <th>Nom de produit</th>
+        <th>Description de produit</th>
+        <th>Catégorie de produit</th>
+        <th>Prix  de produit (en DT)</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let produit of produits; let i = index">
+            <td>
+                <img  [src]="produit.urlImage_produit" height="50">   </td>
+            <td>{{ produit.nomProduit}}</td>
+            <td>{{ produit.description_produit }}</td>
+            <td>{{ produit.categorie_produit}}</td>
+             <td>{{ produit.prixProduit}}</td>
+
+             </tr>
+    </tbody>
+  </table>

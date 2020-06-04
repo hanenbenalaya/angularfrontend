@@ -1,0 +1,21 @@
+
+<table class="table table-bordered">
+    <thead class="table table-striped table-dark">
+    <tr>
+        <td>Nom de l'utilisateur</td>
+        <td>Prénom de l'utilisateur</td>
+        <td>Adress email</td>
+        <td>Numéro de telephone</td>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr *ngFor="let client of clients; let i = index">
+            <td>{{ client.firstname}}</td>
+            <td>{{ client.lastname}}</td>
+            <td>{{ client.email}}</td>
+            <td>{{ client.phone}}</td>
+            
+        </tr>
+    </tbody>
+  </table>
