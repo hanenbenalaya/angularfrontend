@@ -11,6 +11,7 @@ import { ProductService } from './services/product.service';
 import { ProductsHomeComponent } from './product-items/products-home/products-home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { CategorieProdComponent } from './components/categorie-prod/categorie-prod.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     LoginComponent,
     
     PagenotfoundComponent,
+    
+    CategorieProdComponent,
     
     
   ],

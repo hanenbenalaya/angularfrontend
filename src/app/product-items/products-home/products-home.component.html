@@ -1,93 +1,88 @@
 <div class="wrpper">
 
-<div class="content">
-
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-</button>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<div class="collapse navbar-collapse" id="navbarCollapse">
-    
-  <div class="col-md-5">
-    <div class="row">
-        <input type="text" class="form-control" placeholder="rechercher produit">
-      </div>
-
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">rechercher</button>
+  <div class="content">
+  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+  </button>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-md-5">
+          <input type="text" class="form-control" placeholder="rechercher produit">
+        </div>
+  
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">rechercher</button>
+        </div>
       </div>
     </div>
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Acceuil<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Mon Compte</a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mes Commandes</a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="#">Aide et Contacte</a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+              <a class="nav-link" >Déconnection</a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="form-inline mt-2 mt-md-0">
+            <table>
+              <tr><td><img src="../../assets/panier.jpg"  class="form-control mr-sm-2" ></td><td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">panier</button></td></tr>
+              
+              </table>
+            </div>
+      </ul>
   </div>
-  <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Acceuil<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Mon Compte</a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mes Commandes</a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="nav-item">
-            <a class="nav-link" href="#">Aide et Contacte</a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <li class="nav-item">
-            <a class="nav-link" >Déconnection</a>
-          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <div class="form-inline mt-2 mt-md-0">
-          <table>
-            <tr><td><img src="../../assets/panier.jpg"  class="form-control mr-sm-2" ></td><td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">panier</button></td></tr>
-            
-            </table>
-          </div>
-    </ul>
-</div>
-  </nav>
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
   <br/>
-  <br/>
-  <br/>
-  <br/>
-  
-<br/>
- <!-- Page Content -->
- <div class="container">
-
-   <div class="row">
-      
-     <div class="col-lg-3">
-
-       <div class="list-group">
-         <a routerLink="/categorie/1" class="list-group-item"
-           routerLinkActiv="bg-primary text-white font-weight-bold"  >Vétements</a>
-           <a routerLink="/categorie/2" class="list-group-item"
-           routerLinkActiv="bg-primary text-white font-weight-bold"  >Telephone</a>
-         
-       </div>
-
-     </div>
-     <!-- /.col-lg-3 -->
-     <div class="col-lg-9">
-
-      
-
-      
-           <app-product-liste></app-product-liste>
-      
-
-</div>
- <!-- Footer -->
- <footer class="py-5 footer " >
+   <!-- Page Content -->
    <div class="container">
-     <p class="m-0 text-center text-dark">Copyright &copy; Site De Vente Privé 2020</p>
-   </div>
-   <!-- /.container -->
- </footer>
-
-
-</div>
+  
+     <div class="row">
+        
+       <div class="col-lg-3">
+  
+   <app-categorie-prod></app-categorie-prod>
+  
+       </div>
+       <!-- /.col-lg-3 -->
+       <div class="col-lg-9">
+  
+        
+  
+        
+             <app-product-liste></app-product-liste>
+        
+  
+  </div>
+   <!-- Footer -->
+   <footer class="py-5 footer " >
+     <div class="container">
+       <p class="m-0 text-center text-dark">Copyright &copy; Site De Vente Privé 2020</p>
+     </div>
+     <!-- /.container -->
+   </footer>
+  
+  
+  </div>

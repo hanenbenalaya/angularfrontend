@@ -4,7 +4,6 @@ import { ClientListeComponent } from './Client-items/client-liste/client-liste.c
 import { ProductsHomeComponent } from './product-items/products-home/products-home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { ProductListeComponent } from './product-items/product-liste/product-liste.component';
 
 
 const routes: Routes = [

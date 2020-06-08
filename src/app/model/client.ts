@@ -1,10 +1,10 @@
 export class Client {
 
 
-    id:Number;
-    firstname : String ;
-    lastname : String ;
+    id:number;
+    nom : String ;
+    prenom : String ;
     email : String ;
-    phone : Number ;
-    password : String ;
+    telephone : number ;
+    mdp : String ;
 }
