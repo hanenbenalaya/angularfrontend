@@ -12,6 +12,8 @@ import { ProductsHomeComponent } from './product-items/products-home/products-ho
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { CategorieProdComponent } from './components/categorie-prod/categorie-prod.component';
+import { SearchComponent } from './components/search/search.component';
+import { ProductDetailsComponent } from './product-items/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,10 @@ import { CategorieProdComponent } from './components/categorie-prod/categorie-pr
     PagenotfoundComponent,
     
     CategorieProdComponent,
+    
+    SearchComponent,
+    
+    ProductDetailsComponent,
     
     
   ],

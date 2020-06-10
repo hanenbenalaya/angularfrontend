@@ -4,6 +4,7 @@ import { ClientListeComponent } from './Client-items/client-liste/client-liste.c
 import { ProductsHomeComponent } from './product-items/products-home/products-home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { ProductDetailsComponent } from './product-items/product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,17 @@ const routes: Routes = [
 
   },
   {
+    path:'produits/:id',
+    component: ProductDetailsComponent
+
+  },
+  {
     path:'produits',
+    component: ProductsHomeComponent
+
+  },
+  {
+    path:'search/:keyword',
     component: ProductsHomeComponent
 
   },

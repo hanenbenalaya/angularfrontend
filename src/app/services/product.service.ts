@@ -29,7 +29,24 @@ getcatprod():Observable<any>{
     }
 
 
+
+
+searchProducts(keyword: String):Observable<Produit[]>{
+
+      const searchUrl=`${this.baseurl}/search/searchbykeyword?nomProduit=${keyword}`
+     return this.http.get<GetResponseProducts>(searchUrl).pipe(
+        map(response => response._embedded.produits) 
+      );
+  
+    }
+    getPriduct(productid: number):Observable<Produit>{
+      const productDetailsUrl=`${this.baseurl}/${productid}`;
+     return this.http.get<Produit>(productDetailsUrl);
+    }
+
 }
+
+
 interface GetResponseProducts{
 _embedded:{
   produits: Produit[];

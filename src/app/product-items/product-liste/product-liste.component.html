@@ -14,7 +14,7 @@
     </thead>
   
     <tbody>
-        <tr *ngFor="let produit of produits; let i = index">
+        <tr *ngFor="let produit of produits">
             <td>
                 <img  [src]="produit.urlImage_produit" height="50">   </td>
             <td>{{ produit.nomProduit}}</td>

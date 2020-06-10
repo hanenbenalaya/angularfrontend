@@ -7,4 +7,6 @@ export class Client {
     email : String ;
     telephone : number ;
     mdp : String ;
+    role : String ;
+
 }
