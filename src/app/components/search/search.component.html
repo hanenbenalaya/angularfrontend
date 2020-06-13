@@ -1,12 +1,9 @@
-<div class="col-md-20">
-    <div class="row">
-      <div class="col-md-6">
-        <input type="text" class="form-control" #searchInput 
-        (keyup.enter)="searchProduit(searchInput.value)" placeholder="rechercher produit">
-      </div>
 
-      <div class="col-md-2">
-        <button type="submit"  (click)="searchProduit(searchInput.value)" class="btn btn-primary">rechercher</button>
-      </div>
-    </div>
-  </div>
+<div class="navbar-nav ml-2">
+
+  <input type="text" class="form-control" #searchInput 
+        (keyup.enter)="searchProduit(searchInput.value)" placeholder="rechercher produit">
+     
+  <button type="submit"  (click)="searchProduit(searchInput.value)" class="btn btn-primary ml-2">rechercher</button>
+
+</div>

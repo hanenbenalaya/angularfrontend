@@ -1,0 +1,150 @@
+
+<div class="wrpper">
+
+    <div class="content">
+    
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    
+        
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Acceuil<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">A Propos</a>
+        </li>
+     
+      
+      
+  </ul>
+        <app-search></app-search>
+        <div class="ml-auto">
+          <app-cart-status></app-cart-status>
+        </div>
+   
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Aide et Contacte</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" href="#"> Déconnection</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+        </ul>
+    
+      </nav>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
+    <br/>
+     <!-- Page Content -->
+  <div class="container">
+    
+       <div class="row">
+          
+             <div class="col-lg-3">
+    
+             <app-categorie-prod></app-categorie-prod>
+    
+               </div>
+        
+             <div class="col-lg-9">
+                 
+
+<div *ngIf="cartItems.length>0">
+
+    <table class="table table-borderer">
+        <thead class="bg-dark text-light">
+
+           <tr>
+               <th width="20%">Image Produit</th>
+               <th width="50%">details Produit</th>
+               <th width="30%"></th>
+
+           </tr>
+
+
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let cartitem of cartItems">
+               <td>
+
+                <img [src]="cartitem.imageUrl" class="img-responsive" width="150" height="200">
+               </td>
+               <td>
+                 <p>{{cartitem.name}}</p>
+                 <p>{{cartitem.unitPrice|currency: 'TND'}}</p>
+
+               </td>
+               <td>
+                 <div class="row">
+                    <div class="col-md-12">
+                         <p>Quantité:
+
+                           <span (click)="remove(cartitem)" class="float-right  pointer text-danger">
+                             <i class="fas fa-trash-alt"></i>
+                          
+                          
+                           </span>
+
+                         </p>
+
+
+                    </div>
+
+                    <div class="col-md-4">
+                       <button (click)="incrementQuantity(cartitem)" class="btn btn-primary btn-sm float-left">
+                         <i class="fas fa-plus"></i>
+                       </button>
+
+                    </div>
+                    <div class="col-md-4 text-center">
+                      {{cartitem.quantity}}
+                    </div>
+                    <div class="col-md-4">
+                      <button (click)="decrementQuantity(cartitem)" class="btn btn-primary btn-sm float-right">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <p>prix:{{cartitem.quantity*cartitem.unitPrice|currency:'TND'}} </p>
+
+                    </div>
+
+                 </div>
+
+               </td>
+
+</tr>
+<tr>
+    
+    <td colspan="2"class="font-weight-bold"></td>
+    <p>Quantité Totale:{{totalQuantity}}</p>
+    <p>livraison: gratuite</p>
+    <p>Prix Total:{{totalPrice|currency:'TND'}}</p>
+</tr>
+
+</tbody>
+
+
+
+
+</table>
+</div>
+<div *ngIf="cartItems.length==0" class="alert alert-warning" role="alert">
+    Votre panier est vide
+</div>
+</div>
+ 
+  
+</div>
+</div>

@@ -1,21 +1,22 @@
 
 
-
-
- <div class="col-lg-4 col-md-6 mb-4" *ngFor="let produit of produits" >
-    <div class="card h-100">
-      <a  routerLink="/produits/{{produit.idProduit}}"><img class="card-img-top img-responsive"  [src]="produit.urlImage_produit"  ></a>
-      <div class="card-body">
-        <h4 class="card-title">
-          <a routerLink="/produits/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
-        </h4>
-        <h5>{{produit.prixProduit}}</h5>
-        <p class="card-text">{{ produit.description_produit }}</p>
-      </div>
-      <div class="card-footer">
-<button type="button" class="btn btn-primary float-right">Ajouter Carte </button>      </div>
-    </div>
+<div class="cont ml-5">
+<div class="col-lg-6 col-md-6 mb-4" *ngFor="let produit of produits" >
+     <div class="card h-100">
+         <a  routerLink="/produits/{{produit.idProduit}}"><img class="card-img-top "  [src]="produit.urlImage_produit"  ></a>
+          <div class="card-body">
+           <h4 class="card-title">
+           <a routerLink="/produits/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
+            </h4>
+            <h5>{{produit.prixProduit|currency:'TND'}}</h5>
+            <p class="card-text">{{ produit.description_produit }}</p>
+          </div>
+         
+          <div class="card-footer">
+          <button type="button" class="btn btn-primary float-right" (click)="addToCart(produit)">Ajouter Panier </button>      </div>
+         </div>
   </div>
+</div>
   <div *ngIf="produits?.length==0" class="col-md-12 alert alert-warning mt-3">
   
 Aucun produit trouvé

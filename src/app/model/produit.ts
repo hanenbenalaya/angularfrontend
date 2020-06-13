@@ -1,6 +1,6 @@
 export class Produit {
 
-    idProduit :number;
+    idProduit :string;
 	nomProduit:String; 
      prixProduit:number;
      urlImage_produit:String ;

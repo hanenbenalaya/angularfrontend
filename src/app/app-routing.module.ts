@@ -5,6 +5,8 @@ import { ProductsHomeComponent } from './product-items/products-home/products-ho
 import { LoginComponent } from './components/login/login.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ProductDetailsComponent } from './product-items/product-details/product-details.component';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CreateClientComponent } from './Client-items/create-client/create-client.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,21 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent
+
+  },
+  {
+    path:'register',
+    component: CreateClientComponent
+
+  },
+  {
+    path:'logout',
+    component: LoginComponent
+
+  },
+  {
+    path:'cart-details',
+    component: CartDetailsComponent
 
   },
   {
