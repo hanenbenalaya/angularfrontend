@@ -1,0 +1,39 @@
+
+<div class="container col-lg-6">
+    <h3  class="text-center">Ajouter Produit</h3>
+    <div class="card">
+        <div class="card-body">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nom Produit</label>
+          <input type="text" class="form-control" id="nom" required [(ngModel)]="produit.nomProduit" name="nomProduit">
+        </div>
+    
+        <div class="form-group">
+          <label for="name">Prix Produit</label>
+          <input type="text" class="form-control" id="prix" required [(ngModel)]="produit.prixProduit" name="prixProduit" >
+        </div>
+    
+        <div class="form-group">
+          <label for="name">Image Produit</label>
+          <input type="text" class="form-control" id="image" required [(ngModel)]="produit.urlImage_produit" name="urlImage_produit" >
+        </div>
+        
+        <div class="form-group">
+            <label for="name">Description</label>
+            <input type="text" class="form-control" id="description" required [(ngModel)]="produit.description_produit" name="description_produit">
+          </div>
+        
+        
+          <div class="form-group">
+            <label for="name">Quantité en stock</label>
+            <input type="text" class="form-control" id="quantitéstock" required [(ngModel)]="produit.quantite_stock" name="quantite_stock" >
+          </div>
+    
+        <button type="submit" class="btn btn-success">Ajouter</button>
+      </form>
+    </div>
+    
+   
+    </div></div></div>

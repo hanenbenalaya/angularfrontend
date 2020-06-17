@@ -1,7 +1,7 @@
 export class Client {
 
 
-    id:number;
+    Clt_id:number;
     nom : String ;
     prenom : String ;
     email : String ;

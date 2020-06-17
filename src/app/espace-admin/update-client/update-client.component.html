@@ -1,0 +1,33 @@
+
+
+<div class="container col-lg-6">
+    <h3  class="text-center">Inscription</h3>
+    <div class="card">
+        <div class="card-body">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="updateClient()">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" id="nom" required [(ngModel)]="client.nom" name="nom">
+        </div>
+    
+        <div class="form-group">
+          <label for="name">Prénom</label>
+          <input type="text" class="form-control" id="prenom" required [(ngModel)]="client.prenom" name="prenom" >
+        </div>
+    
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" id="email" required [(ngModel)]="client.email" name="email" >
+        </div>
+        
+        <div class="form-group">
+            <label for="name">Numéro de telephone</label>
+            <input type="text" class="form-control" id="telephone" required [(ngModel)]="client.telephone" name="telephone">
+          </div>
+          
+       
+    
+        <button type="submit" href="/listeclients" class="btn btn-success">modifier</button>
+      </form>
+    </div>

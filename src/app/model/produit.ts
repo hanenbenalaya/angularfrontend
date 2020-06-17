@@ -1,11 +1,14 @@
+import { CategorieProdComponent } from '../components/categorie-prod/categorie-prod.component';
+import { CategorieProd } from './categorie-produit';
+
 export class Produit {
 
-    idProduit :string;
+    idProduit :number;
 	nomProduit:String; 
      prixProduit:number;
      urlImage_produit:String ;
       description_produit :String;
-     categorie:number;
+     categorie:any;
       quantite_stock:number;
 
 

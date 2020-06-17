@@ -1,7 +1,7 @@
 import { Produit } from './produit';
 
 export class CartItem {
-id:String;
+id:number;
 name:String;
 imageUrl:String;
 unitPrice:number;

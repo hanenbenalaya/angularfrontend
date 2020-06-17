@@ -18,8 +18,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { CartStatusComponent } from './components/cart-status/cart-status.component'; // <-- import the module
 import{NgxSpinnerModule} from 'ngx-spinner';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component'
-import { HttpInterceptorService } from './services/http-interceptor.service';
 import { CreateClientComponent } from './Client-items/create-client/create-client.component';
+import { CreateProductComponent } from './product-items/create-product/create-product.component';
+import { AjoutCategorieComponent } from './components/ajout-categorie/ajout-categorie.component';
+import { CategAddProdComponent } from './components/categ-add-prod/categ-add-prod.component';
+import { AdminHomeComponent } from './espace-admin/admin-home/admin-home.component';
+import { CategorieAdminComponent } from './components/categorie-admin/categorie-admin.component';
+import { ProductListAdminComponent } from './espace-admin/product-list-admin/product-list-admin.component';
+import { ListeClientComponent } from './espace-admin/liste-client/liste-client.component';
+import { UpdateClientComponent } from './espace-admin/update-client/update-client.component';
 //import {JwPaginationComponent} from 'jw-angular-pagination'
 @NgModule({
   declarations: [
@@ -47,6 +54,22 @@ import { CreateClientComponent } from './Client-items/create-client/create-clien
     
     CreateClientComponent,
     
+    CreateProductComponent,
+    
+    AjoutCategorieComponent,
+    
+    CategAddProdComponent,
+    
+    AdminHomeComponent,
+    
+    CategorieAdminComponent,
+    
+    ProductListAdminComponent,
+    
+    ListeClientComponent,
+    
+    UpdateClientComponent,
+    
     
     
   ],
@@ -62,11 +85,7 @@ import { CreateClientComponent } from './Client-items/create-client/create-clien
   providers: [
     ClientService,
     ProductService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptorService,
-      multi: true
-    }
+    
   ],
   bootstrap: [AppComponent]
 })

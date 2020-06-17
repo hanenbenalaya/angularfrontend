@@ -9,16 +9,19 @@ import{Client} from '../model/client'
 })
 export class ClientService {
 
-  private baseUrl="http://localhost:8080/api/v1/clients";
+  private baseUrl="http://localhost:8090/api/v1/clients";
 
   constructor(private http: HttpClient) {}
   
-  getClients():Observable<Client[]>{
-   return this.http.get<GetResponseClients>(this.baseUrl).pipe(
-      map(response => response._embedded.clients)
-    )
+  getClients():Observable<any>{
+   return this.http.get(this.baseUrl);
+     
 
   }
+  getClient(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
 
   createClient(client: Client): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, client);

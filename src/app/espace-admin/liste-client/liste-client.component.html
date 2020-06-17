@@ -1,0 +1,71 @@
+<div class="wrpper">
+
+    <div class="content">
+    
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    
+        
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link" href="adminhome">Acceuil</a>
+      </li>
+     
+      
+      
+  </ul>
+  
+   
+    
+    
+
+      
+   
+      <ul class="navbar-nav ">
+        
+        <li class="nav-item">
+          <a class="nav-link"  > Déconnection</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+        </ul>
+    
+      </nav>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h3 class="text-center">liste des clients</h3>
+  <div class="container">
+      
+<table class="table table-hover">
+    <thead class="thead-dark">
+    <tr >
+        
+        <th scope="col">Nom </th>
+        <th scope="col">Prenom</th>
+        <th scope="col">email</th>
+        <th scope="col">telephone</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+  
+    <tbody>
+        <tr scope="row" *ngFor="let client of clients">
+            <td >{{ client.nom}}
+                 </td>
+            <td>{{ client.prenom}}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.telephone}}</td>
+            <td><button (click)="deleteclient(client.clt_id)" class="btn btn-danger">Supprimer</button>
+                <button (click)="updateclient(client.clt_id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
+            </td>
+
+             </tr>
+    </tbody>
+  </table>
+  </div>

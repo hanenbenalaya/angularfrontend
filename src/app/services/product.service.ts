@@ -10,8 +10,10 @@ import { CategorieProdComponent } from '../components/categorie-prod/categorie-p
 })
 export class ProductService {
 
-  private baseurl="http://localhost:8080/api/v1/produits";
-  private categurl="http://localhost:8080/api/v1/categories";
+  private baseurl="http://localhost:8090/api/v1/produits";
+  private baseurl2="http://localhost:8090/api/v1/produitscateg";
+
+  private categurl="http://localhost:8090/api/v1/categories";ooo
   categorieProd: CategorieProd[]
   constructor(private http: HttpClient) {}
   
@@ -44,6 +46,31 @@ searchProducts(keyword: String):Observable<Produit[]>{
      return this.http.get<Produit>(productDetailsUrl);
     }
 
+
+getProduits():Observable<Produit[]>{
+  return this.http.get<GetResponseProducts>(this.baseurl).pipe(
+     map(response => response._embedded.produits)
+   )
+
+ }
+
+ createProduit(produit: Produit): Observable<Object> {
+ 
+
+   console.log("product sent:", produit)
+
+
+   return this.http.post(`${this.baseurl2}`, produit);
+  
+ }
+
+ updateProduit(id: number, value: any): Observable<Object> {
+   return this.http.put(`${this.baseurl}/${id}`, value);
+ }
+
+ deleteProduit(id: number): Observable<any> {
+   return this.http.delete(`${this.baseurl}/${id}`, { responseType: 'text' });
+ }
 }
 
 

@@ -7,6 +7,11 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { ProductDetailsComponent } from './product-items/product-details/product-details.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CreateClientComponent } from './Client-items/create-client/create-client.component';
+import { CreateProductComponent } from './product-items/create-product/create-product.component';
+import { AjoutCategorieComponent } from './components/ajout-categorie/ajout-categorie.component';
+import { AdminHomeComponent } from './espace-admin/admin-home/admin-home.component';
+import { ListeClientComponent } from './espace-admin/liste-client/liste-client.component';
+import { UpdateClientComponent } from './espace-admin/update-client/update-client.component';
 
 
 const routes: Routes = [
@@ -17,8 +22,38 @@ const routes: Routes = [
 
   },
   {
+    path:'adminhome',
+    component: AdminHomeComponent
+
+  },
+  {
+    path:'adminhome/:id',
+    component: AdminHomeComponent
+
+  },
+  {
+    path:'listeclients',
+    component: ListeClientComponent
+
+  },
+  {
+    path:'update/:id',
+    component: UpdateClientComponent
+
+  },
+  {
     path:'register',
     component: CreateClientComponent
+
+  },
+  {
+    path:'ajoutcatecorie',
+    component: AjoutCategorieComponent
+
+  },
+  {
+    path:'ajoutproduit/:id',
+    component: CreateProductComponent
 
   },
   {
