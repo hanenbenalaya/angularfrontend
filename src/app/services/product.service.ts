@@ -11,6 +11,8 @@ import { CategorieProdComponent } from '../components/categorie-prod/categorie-p
 export class ProductService {
 
   private baseurl="http://localhost:8090/api/v1/produits";
+  private baseurl3="http://localhost:8090/api/v1/proddel";
+
   private baseurl2="http://localhost:8090/api/v1/produitscateg";
 
   private categurl="http://localhost:8090/api/v1/categories";ooo
@@ -67,10 +69,14 @@ getProduits():Observable<Produit[]>{
  updateProduit(id: number, value: any): Observable<Object> {
    return this.http.put(`${this.baseurl}/${id}`, value);
  }
-
  deleteProduit(id: number): Observable<any> {
-   return this.http.delete(`${this.baseurl}/${id}`, { responseType: 'text' });
- }
+  return this.http.delete(`${this.baseurl3}/${id}`, { responseType: 'text' });
+}
+ //deleteProduit(id: number) {
+  // console.log("id recu",id);
+   //console.log("url",`${this.baseurl3}/${id}`)
+   // this.http.delete(`${this.baseurl3}/${id}`, { responseType: 'text' });
+ //}
 }
 
 

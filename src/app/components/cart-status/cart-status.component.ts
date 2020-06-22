@@ -7,7 +7,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart-status.component.css']
 })
 export class CartStatusComponent implements OnInit {
-totalPrice:number;
+totalPrice:number;//
 totalQuantity:number;
 
   constructor(private cartService : CartService) { }

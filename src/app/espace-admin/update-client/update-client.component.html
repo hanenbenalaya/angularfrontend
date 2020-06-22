@@ -4,7 +4,7 @@
     <h3  class="text-center">Inscription</h3>
     <div class="card">
         <div class="card-body">
-    <div [hidden]="submitted" style="width: 400px;">
+    <div  style="width: 400px;">
       <form (ngSubmit)="updateClient()">
         <div class="form-group">
           <label for="name">Nom</label>
@@ -28,6 +28,6 @@
           
        
     
-        <button type="submit" href="/listeclients" class="btn btn-success">modifier</button>
+        <button type="submit" routerLink="/listeclients" class="btn btn-success">modifier</button>
       </form>
     </div>

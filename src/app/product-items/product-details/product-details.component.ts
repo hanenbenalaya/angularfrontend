@@ -36,7 +36,7 @@ this.productService.getPriduct(id).subscribe(
 
 }
 addToCart(){
-  const cartItem = new CartItem(this.produit);
+  const cartItem = new CartItem(this.produit.idProduit,this.produit.nomProduit,this.produit.urlImage_produit,this.produit.prixProduit);
   this.cartService.addToCart(cartItem);
 }
 

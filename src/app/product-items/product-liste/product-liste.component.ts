@@ -37,7 +37,7 @@ searchMode: boolean;
 
  addToCart(produit:Produit){
    console.log(`nom produit: ${produit.nomProduit}, et prix:${produit.prixProduit} `);
- const cartItem=new CartItem(produit);
+ const cartItem=new CartItem(produit.idProduit,produit.nomProduit,produit.urlImage_produit,produit.prixProduit);
  this.cartService.addToCart(cartItem);
  }
 

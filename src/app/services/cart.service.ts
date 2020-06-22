@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../model/cart-item';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import { CommandItems } from '../model/command-items';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,9 @@ export class CartService {
 cartItems:CartItem[]=[];
 totalPrice:Subject<number>=new Subject<number>();
 totalQuantity:Subject<number>=new Subject<number>();
- 
-  constructor() { }
+private baseUrl="http://localhost:8090/api/v1/lignecommandefull";
+
+  constructor(private http: HttpClient) { }
 
   decrementQuantity(cartItem: CartItem) {
     cartItem.quantity--; 
@@ -38,7 +41,7 @@ totalQuantity:Subject<number>=new Subject<number>();
    this.calculateTotalPrice();
 
   }
-  calculateTotalPrice() {
+calculateTotalPrice() {
 let totalePriceValue:number=0;
 let totaleQuantityValue:number=0;
 for(let currentCartItem of this.cartItems){
@@ -52,12 +55,23 @@ console.log(`prix totale : ${totalePriceValue}, quantité totale : ${totaleQuant
 this.totalPrice.next(totalePriceValue);
 this.totalQuantity.next(totaleQuantityValue);
 
+
   }
+
+
+
   remove(cartitem:CartItem){
     const itemIndex= this.cartItems.findIndex((tempCartItem) => tempCartItem.id===cartitem.id);
    if(itemIndex>-1){
      this.cartItems.splice(itemIndex,1);
      this.calculateTotalPrice();
      }
+   }
+   confirmcmd(cmd:CommandItems):Observable<Object>{
+    console.log("commande a envoyé:",cmd)
+
+    return this.http.post(`${this.baseUrl}`,cmd);
+   
+
    }
 }

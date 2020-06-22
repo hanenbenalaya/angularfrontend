@@ -12,10 +12,15 @@ import { AjoutCategorieComponent } from './components/ajout-categorie/ajout-cate
 import { AdminHomeComponent } from './espace-admin/admin-home/admin-home.component';
 import { ListeClientComponent } from './espace-admin/liste-client/liste-client.component';
 import { UpdateClientComponent } from './espace-admin/update-client/update-client.component';
+import { ProductUpdateComponent } from './product-items/product-update/product-update.component';
 
 
 const routes: Routes = [
-    
+   {
+    path:'updateprod/:id',
+    component: ProductUpdateComponent 
+
+  }, 
   {
     path:'login',
     component: LoginComponent
@@ -32,7 +37,7 @@ const routes: Routes = [
 
   },
   {
-    path:'listeclients',
+    path:'listeclients/:id',
     component: ListeClientComponent
 
   },

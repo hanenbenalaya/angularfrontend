@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from 'src/app/model/produit';
 import { ProductService } from 'src/app/services/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/model/cart-item';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -22,7 +22,7 @@ searchMode: boolean;
 //pageSize:number=6;
 
   constructor(private productService:ProductService, 
-    private _activitedRouter: ActivatedRoute,  private spinnerService: NgxSpinnerService,) { }
+    private _activitedRouter: ActivatedRoute,  private spinnerService: NgxSpinnerService,private router: Router) { }
 
   ngOnInit(): void {
     this._activitedRouter.paramMap.subscribe(()=>{
@@ -34,11 +34,23 @@ searchMode: boolean;
  // pageClick(pageOfItems:Array<Produit>){
     //update the current page items
    // this.pageOfItems=pageOfItems;}
+   deleteProduit(id: number) {
+    this.productService.deleteProduit(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.ListProducts();
+        },
+        error => console.log(error));
+  }
 
- deleteProduit(produit:Produit){
- this.productService.deleteProduit(produit.idProduit);
-  console.log("produit supprumé");
- }
+ //deleteProduit(produit:Produit){
+ // console.log(`nom produit: ${produit.nomProduit}, et prix:${produit.prixProduit} `);
+ // console.log("id produit:",produit.idProduit );
+
+ //this.productService.deleteProduit(produit.idProduit);
+  
+ 
 
 
 
@@ -88,6 +100,9 @@ this.productService.searchProducts(keyword).subscribe(
 )
 
  }
+ updateproduct(id: number){
+  this.router.navigate(['updateprod', id]);
+}
 
 }
 

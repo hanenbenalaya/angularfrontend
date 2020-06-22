@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthObj } from 'src/app/model/auth-obj';
+import { ClientService } from 'src/app/services/client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
- 
-
-  constructor(
+ auth:AuthObj=new AuthObj;
+  idclt:any
+  constructor(private clientService:ClientService,private router: Router
     ) {   }
 
   ngOnInit() {
   }
+authClt(){
 
+  this.clientService.auth(this.auth).subscribe(data=>this.idclt=data);
+   
+    localStorage.setItem("client id ",JSON.stringify(this.idclt))
+    console.log(this.idclt);
+    if(this.idclt)
+    this.router.navigate(['/produits']);
+    
+}
 }
