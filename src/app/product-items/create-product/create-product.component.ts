@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produit } from 'src/app/model/produit';
 import { ProductService } from 'src/app/services/product.service';
-import { CategorieProdComponent } from 'src/app/components/categorie-prod/categorie-prod.component';
 import { CategorieService } from 'src/app/services/categorie.service';
+
 import { CategorieProd } from 'src/app/model/categorie-produit';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-product',
@@ -15,7 +16,7 @@ export class CreateProductComponent implements OnInit {
   curentCategoryId:number;
   submitted = false;
   categorie: CategorieProd;
-  
+  profilePicture: string = null;
   produit :Produit = new Produit();
   constructor(private categService: CategorieService,private productService: ProductService, private _activitedRouter: ActivatedRoute,private router: Router) { 
     this.curentCategoryId= +this._activitedRouter.snapshot.paramMap.get('id');
@@ -37,7 +38,32 @@ export class CreateProductComponent implements OnInit {
     this.submitted = false;
     this.produit = new Produit();
   }
+  handleProfilePictureInput(file) {
+    console.log("file:", file[0].name);
+    const reader = new FileReader();
 
+    reader.readAsDataURL(file);
+    console.log("reader", reader);
+
+    this.getBase64(file[0])
+        .subscribe(str => this.profilePicture = str);
+        console.log("picture :",this.profilePicture);
+
+  }
+  getBase64(file): Observable<string> {
+    return new Observable<string>(sub => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      console.log("reader", reader);
+      reader.onload = () => {
+        sub.next(reader.result.toString());
+        sub.complete();
+      };
+      reader.onerror = error => {
+        sub.error(error);
+      };
+    })
+  }
   save() {
     this.productService.createProduit(this.produit)
       .subscribe(data => console.log(data), error => console.log(error));

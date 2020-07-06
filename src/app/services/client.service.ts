@@ -12,6 +12,8 @@ export class ClientService {
 
   private baseUrl="http://localhost:8090/api/v1/clients";
   private baseUrl2="http://localhost:8090/api/v1/clientauth";
+  private baseUrl3="http://localhost:8090/api/v1/clientauthAdm";
+
    x:Observable<object>
    data:Observable<Client[]>
    num:Observable<number>
@@ -53,11 +55,19 @@ export class ClientService {
   return this.http.post(`${this.baseUrl2}`, auth);
 
 }
+verifAdm(auth:AuthObj){
+  return this.http.post(`${this.baseUrl3}`, auth);
+
+}
 
 auth(auth:AuthObj){
  this.x=this.verif(auth);
 return this.x
 }
+authAdm(auth:AuthObj){
+  this.x=this.verifAdm(auth);
+ return this.x
+ }
 
 }
 interface GetResponseClients{

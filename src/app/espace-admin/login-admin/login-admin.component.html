@@ -1,6 +1,6 @@
 
 <div class="container col-lg-6">
-    <h1 class="text-center">Connexion</h1>
+    <h1 class="text-center">Connexion Admin</h1>
     <div class="card">
       <div class="card-body">
         <form  (ngSubmit)="authClt()"class="form-group">
@@ -15,7 +15,7 @@
             <input type="password" class="form-control" id="pwd"  required [(ngModel)]="auth.pwd"
               name="pwd">
           </div>
-          <button type="submit" class="btn btn-success">Se connecter</button> <button routerLink="/register" class="btn btn-success ml-2" >S'inscrire</button>
+          <button type="submit" class="btn btn-success">Se connecter</button> <button routerLink="/registeradmin" class="btn btn-success ml-2" >S'inscrire</button>
         </form>
       </div>
     </div>
@@ -23,6 +23,5 @@
       e-mail ou mot de passe non reconnu
       
         </div> 
-        <a routerLink="/loginadmin">Espace Admin</a>
   </div>
   

@@ -18,7 +18,8 @@
     
         <div class="form-group">
           <label for="name">Image Produit</label>
-          <input type="text" class="form-control" id="urlImage_produit" required [(ngModel)]="produit.urlImage_produit" name="urlImage_produit" >
+          <input  *ngIf="!profilePicture" type="file" 
+          (change)="handleProfilePictureInput($event.target.files)"  required [(ngModel)]="produit.urlImage_produit" name="urlImage_produit" >
         </div>
         
         <div class="form-group">

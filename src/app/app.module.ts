@@ -28,6 +28,8 @@ import { ProductListAdminComponent } from './espace-admin/product-list-admin/pro
 import { ListeClientComponent } from './espace-admin/liste-client/liste-client.component';
 import { UpdateClientComponent } from './espace-admin/update-client/update-client.component';
 import { ProductUpdateComponent } from './product-items/product-update/product-update.component';
+import { RegisterAdminComponent } from './espace-admin/register-admin/register-admin.component';
+import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.component';
 //import {JwPaginationComponent} from 'jw-angular-pagination'
 @NgModule({
   declarations: [
@@ -72,6 +74,10 @@ import { ProductUpdateComponent } from './product-items/product-update/product-u
     UpdateClientComponent,
     
     ProductUpdateComponent,
+    
+    RegisterAdminComponent,
+    
+    LoginAdminComponent,
     
     
     

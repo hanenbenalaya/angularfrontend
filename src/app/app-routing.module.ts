@@ -13,12 +13,24 @@ import { AdminHomeComponent } from './espace-admin/admin-home/admin-home.compone
 import { ListeClientComponent } from './espace-admin/liste-client/liste-client.component';
 import { UpdateClientComponent } from './espace-admin/update-client/update-client.component';
 import { ProductUpdateComponent } from './product-items/product-update/product-update.component';
+import { RegisterAdminComponent } from './espace-admin/register-admin/register-admin.component';
+import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.component';
 
 
 const routes: Routes = [
    {
     path:'updateprod/:id',
     component: ProductUpdateComponent 
+
+  }, 
+  {
+    path:'loginadmin',
+    component: LoginAdminComponent
+
+  },
+  {
+    path:'registeradmin',
+    component: RegisterAdminComponent
 
   }, 
   {

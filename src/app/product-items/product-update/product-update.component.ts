@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produit } from 'src/app/model/produit';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-update',
@@ -9,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
+  profilePicture: string = null;
 
   id: number;
   produit: Produit;
@@ -32,6 +34,26 @@ export class ProductUpdateComponent implements OnInit {
       .subscribe(data => console.log(data), error => console.log(error));
     this.produit = new Produit();
    
+  }
+  handleProfilePictureInput(file) {
+    console.log("file:", file);
+    this.getBase64(file[0])
+        .subscribe(str => this.profilePicture = str);
+        console.log(this.profilePicture);
+  }
+  
+  getBase64(file): Observable<string> {
+    return new Observable<string>(sub => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        sub.next(reader.result.toString());
+        sub.complete();
+      };
+      reader.onerror = error => {
+        sub.error(error);
+      };
+    })
   }
 
 }

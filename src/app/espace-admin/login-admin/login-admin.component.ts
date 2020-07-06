@@ -4,13 +4,13 @@ import { ClientService } from 'src/app/services/client.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrls: ['./login-admin.component.css']
 })
-export class LoginComponent implements OnInit {
-notfound:boolean;
- auth:AuthObj=new AuthObj;
+export class LoginAdminComponent implements OnInit {
+ notfound:boolean;
+  auth:AuthObj=new AuthObj;
   idclt:any
   constructor(private clientService:ClientService,private router: Router
     ) {   }
@@ -19,14 +19,15 @@ notfound:boolean;
   }
 authClt(){
 
-  this.clientService.auth(this.auth).subscribe(data=>this.idclt=data);
+  this.clientService.authAdm(this.auth).subscribe(data=>this.idclt=data);
    
     localStorage.setItem("client id ",JSON.stringify(this.idclt))
     console.log(this.idclt);
     if(this.idclt)
-    {this.router.navigate(['/produits']);
-    this.notfound=false}
-    else 
+    {this.router.navigate(['/adminhome']);
+    this.notfound=false;}
+    else
     this.notfound=true;
 }
+
 }
