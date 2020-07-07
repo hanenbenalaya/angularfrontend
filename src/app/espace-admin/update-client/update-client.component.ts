@@ -28,7 +28,9 @@ export class UpdateClientComponent implements OnInit {
 
   updateClient() {
     this.clientService.updateClient(this.id, this.client)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data => console.log(data), error => console.log("error",error));
+      this.router.navigate(['listeclients', 0]);
+      
     this.client = new Client();
    
   }

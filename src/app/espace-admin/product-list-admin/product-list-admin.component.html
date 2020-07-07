@@ -1,12 +1,12 @@
 
 
 <div class="row">
-    <div class="col-lg-6 col-md-6 mb-4" *ngFor="let produit of produits" >
+    <div class="col-lg-5 col-md-4 mb-6" *ngFor="let produit of produits" >
          <div class="card h-100">
-             <a  routerLink="/produits/{{produit.idProduit}}"><img class="card-img-top "  [src]="produit.urlImage_produit"  ></a>
+             <a  routerLink="/adminhomep/{{produit.idProduit}}"><img class="card-img-top "  [src]="produit.urlImage_produit"  ></a>
               <div class="card-body">
                <h4 class="card-title">
-               <a routerLink="/produits/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
+               <a routerLink="/adminhomep/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
                 </h4>
                 <h5>{{produit.prixProduit|currency:'TND'}}</h5>
                 <p class="card-text">{{ produit.description_produit }}</p>
@@ -14,12 +14,18 @@
               <div class="card-footer">
                 
                 <button (click)="updateproduct(produit.idProduit)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
-               <button  class="btn btn-primary float-right" (click)="deleteProduit(produit.idProduit)">Supprimer Produit </button>      
+               <button  class="btn btn-primary float-right" (click)="deleteProduit(produit.idProduit)">Supprimer  </button>      
               
               </div>
             </div>
       </div>
     </div>
+    <ul class="nav nav-pills">
+      <li class="nav-item" *ngFor="let p of pages ;let i=index">
+        <a class="nav-link active ml-1" (click)="ngOnInit()"(click)="fixnumpage(i)"
+        routerLinkActiv="bg-primary text-white font-weight-bold" >{{i}}</a>
+      </li>
+    </ul>
       <div *ngIf="produits?.length==0" class="col-md-12 alert alert-warning mt-3">
       
     Aucun produit trouvé

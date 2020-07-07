@@ -25,3 +25,10 @@
              </tr>
     </tbody>
   </table>
+  <hr>
+  <ul class="nav nav-pills">
+    <li class="nav-item" *ngFor="let p of pages ;let i=index">
+      <a class="nav-link active ml-1"  routerLink="/produits/{{curentCategoryId}}/{{i}}/4"(click)="ngOnInit()"(click)="fixnumpage(i)"
+      routerLinkActiv="bg-primary text-white font-weight-bold" >{{i}}</a>
+    </li>
+  </ul>

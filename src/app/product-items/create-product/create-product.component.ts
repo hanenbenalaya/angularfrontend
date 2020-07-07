@@ -6,6 +6,7 @@ import { CategorieService } from 'src/app/services/categorie.service';
 
 import { CategorieProd } from 'src/app/model/categorie-produit';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-create-product',
@@ -18,6 +19,9 @@ export class CreateProductComponent implements OnInit {
   categorie: CategorieProd;
   profilePicture: string = null;
   produit :Produit = new Produit();
+  public thingForm: FormGroup;
+  urlpic: string ="http://localhost:4200/assets/image/produits/"
+
   constructor(private categService: CategorieService,private productService: ProductService, private _activitedRouter: ActivatedRoute,private router: Router) { 
     this.curentCategoryId= +this._activitedRouter.snapshot.paramMap.get('id');
    
@@ -38,13 +42,17 @@ export class CreateProductComponent implements OnInit {
     this.submitted = false;
     this.produit = new Produit();
   }
+ 
+  save() {
+    this.productService.createProduit(this.produit)
+      .subscribe(data => console.log(data), error => console.log(error));
+      console.log("product created",this.produit);
+    this.gotoList();
+  }
   handleProfilePictureInput(file) {
     console.log("file:", file[0].name);
-    const reader = new FileReader();
-
-    reader.readAsDataURL(file);
-    console.log("reader", reader);
-
+    this.produit.urlImage_produit=this.urlpic+file[0].name;
+    console.log('image:',this.produit.urlImage_produit)
     this.getBase64(file[0])
         .subscribe(str => this.profilePicture = str);
         console.log("picture :",this.profilePicture);
@@ -64,13 +72,6 @@ export class CreateProductComponent implements OnInit {
       };
     })
   }
-  save() {
-    this.productService.createProduit(this.produit)
-      .subscribe(data => console.log(data), error => console.log(error));
-      console.log("product created",this.produit);
-    this.gotoList();
-  }
-
   onSubmit() {
     this.submitted = true;
     this.save(); 

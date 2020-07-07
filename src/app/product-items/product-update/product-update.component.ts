@@ -10,10 +10,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
-  profilePicture: string = null;
-
+urlpic: string ="http://localhost:4200/assets/image/produits/"
   id: number;
   produit: Produit;
+  profilePicture: string = null;
+
   constructor(private route: ActivatedRoute,private router: Router,
     private productService: ProductService) { }
 
@@ -28,24 +29,20 @@ export class ProductUpdateComponent implements OnInit {
         this.produit = data;
       }, error => console.log(error));
   }
-
-  updateProduit() {
-    this.productService.updateProduit(this.id, this.produit)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.produit = new Produit();
-   
-  }
   handleProfilePictureInput(file) {
-    console.log("file:", file);
+    console.log("file:", file[0].name);
+this.produit.urlImage_produit=this.urlpic+file[0].name;
+console.log('image:',this.produit.urlImage_produit)
     this.getBase64(file[0])
         .subscribe(str => this.profilePicture = str);
-        console.log(this.profilePicture);
+        console.log("picture :",this.profilePicture);
+
   }
-  
   getBase64(file): Observable<string> {
     return new Observable<string>(sub => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
+      console.log("reader", reader);
       reader.onload = () => {
         sub.next(reader.result.toString());
         sub.complete();
@@ -55,5 +52,13 @@ export class ProductUpdateComponent implements OnInit {
       };
     })
   }
+  updateProduit() {
+   
+    this.productService.updateProduit(this.id, this.produit)
+      .subscribe(data => console.log("data",data), error => console.log(error));
+    this.produit = new Produit();
+    this.router.navigate(['adminhome']);
+  }
+ 
 
 }

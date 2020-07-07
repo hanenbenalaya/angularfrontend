@@ -19,6 +19,18 @@ export class ProductService {
   categorieProd: CategorieProd[]
   constructor(private http: HttpClient) {}
   
+  getProdByCat(CatId:number,currentPage:number,pageSize:number):Observable<GetResponseProductscat>{
+    return  this.http.get<GetResponseProductscat>("http://localhost:8090/api/v1/produits/"+CatId+"/"+currentPage+"/"+pageSize);
+    
+       
+  };
+  getNbrPages(CatId:number,currentPage:number,pageSize:number):Observable<number>{
+    return  this.http.get<GetResponseProductscat>("http://localhost:8090/api/v1/produits/"+CatId+"/"+currentPage+"/"+pageSize).pipe(
+      map(response => response.totalPages) 
+    );
+    
+       
+  };
   getProducts(theCategoryeid: number):Observable<Produit[]>{
 
     const searchUrl=`${this.baseurl}/search/categorieid?id=${theCategoryeid}`
@@ -84,3 +96,10 @@ interface GetResponseProducts{
 _embedded:{
   produits: Produit[];
 }}
+interface GetResponseProductscat{
+  totalItems: number
+    size: number
+    totalPages: number
+    currentPage: number
+    articles: Produit[];
+  }

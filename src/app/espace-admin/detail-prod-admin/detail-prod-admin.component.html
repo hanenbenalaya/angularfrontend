@@ -39,7 +39,7 @@
       <ul class="navbar-nav ">
         
         <li class="nav-item">
-          <a class="nav-link" routerLink="/loginadmin" > Déconnection</a>
+          <a class="nav-link"  > Déconnection</a>
         </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
         </ul>
@@ -62,9 +62,30 @@
                </div>
         
              <div class="col-lg-9">
-    
-  <app-product-list-admin></app-product-list-admin>     
-  
+         
+              <div class="row">
+
+                <!--to display the image -->
+            <div class="col-12 col-md-4">
+        <div class="thumbnail">
+            <img class="profile-picture" src="{{produit.urlImage_produit}}"/>
+        </div>
+            </div>
+        
+          <!--to display the product details-->
+            <div class="col-12 col-md-8">
+                <h3>{{produit.nomProduit}}</h3>
+                <hr/>
+                <p>{{produit.description_produit}}</p>
+                <h4>Prix:<strong>{{produit.prixProduit|currency:'TND'}} </strong></h4>
+                <hr/>
+                <h6>Quantité disponible:{{produit.quantite_stock}}  </h6>
+                <hr/>
+                <a routerLink="/adminhome" class="btn btn-success"  ><i class="fas fa-arrow-left"></i>Retour</a>
+                
+        
+            </div>
+            </div>
        </div>
    
     

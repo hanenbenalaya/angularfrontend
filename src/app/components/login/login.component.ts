@@ -24,7 +24,7 @@ authClt(){
     localStorage.setItem("client id ",JSON.stringify(this.idclt))
     console.log(this.idclt);
     if(this.idclt)
-    {this.router.navigate(['/produits']);
+    {this.router.navigate(['/produits/0']);
     this.notfound=false}
     else 
     this.notfound=true;

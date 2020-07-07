@@ -48,11 +48,9 @@ console.log("page num:", this.id);
       
       updateclient(id: number){
         this.router.navigate(['update', id]);
-      }
-      navigate(id: number){
-        this.router.navigate(['listeclients', id]);
         this.ngOnInit();
       }
+    
       
 
 }
