@@ -15,7 +15,7 @@ export class ProductService {
 
   private baseurl2="http://localhost:8090/api/v1/produitscateg";
 
-  private categurl="http://localhost:8090/api/v1/categories";ooo
+  private categurl="http://localhost:8090/api/v1/categories";
   categorieProd: CategorieProd[]
   constructor(private http: HttpClient) {}
   
@@ -26,7 +26,7 @@ export class ProductService {
   };
   getNbrPages(CatId:number,currentPage:number,pageSize:number):Observable<number>{
     return  this.http.get<GetResponseProductscat>("http://localhost:8090/api/v1/produits/"+CatId+"/"+currentPage+"/"+pageSize).pipe(
-      map(response => response.totalPages) 
+      map(response =>response.totalPages) 
     );
     
        
@@ -84,11 +84,7 @@ getProduits():Observable<Produit[]>{
  deleteProduit(id: number): Observable<any> {
   return this.http.delete(`${this.baseurl3}/${id}`, { responseType: 'text' });
 }
- //deleteProduit(id: number) {
-  // console.log("id recu",id);
-   //console.log("url",`${this.baseurl3}/${id}`)
-   // this.http.delete(`${this.baseurl3}/${id}`, { responseType: 'text' });
- //}
+ 
 }
 
 
@@ -97,7 +93,7 @@ _embedded:{
   produits: Produit[];
 }}
 interface GetResponseProductscat{
-  totalItems: number
+   totalItems: number
     size: number
     totalPages: number
     currentPage: number

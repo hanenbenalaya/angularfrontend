@@ -29,6 +29,7 @@ id:number=1;
 
   ngOnInit(): void {
     this.id=+this._activitedRouter.snapshot.paramMap.get('id');
+    if (this.id==0){this.id=1}
    this.productService.getNbrPages(this.id,0,4).subscribe(
     totalPages=>{this.numpages=totalPages
       console.log("nbr pages",this.numpages);
