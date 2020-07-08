@@ -17,11 +17,12 @@ export class LoginAdminComponent implements OnInit {
 
   ngOnInit() {
   }
+ 
 authClt(){
 
   this.clientService.authAdm(this.auth).subscribe(data=>this.idclt=data);
    
-    localStorage.setItem("client id ",JSON.stringify(this.idclt))
+    localStorage.setItem("currentUser",JSON.stringify(this.idclt))
     console.log(this.idclt);
     if(this.idclt)
     {this.router.navigate(['/adminhome']);

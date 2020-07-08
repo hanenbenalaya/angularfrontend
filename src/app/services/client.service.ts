@@ -68,12 +68,17 @@ authAdm(auth:AuthObj){
   this.x=this.verifAdm(auth);
  return this.x
  }
+ logout() {
+  // remove user from local storage to log user out
+  localStorage.removeItem('currentUser');
+}
 
 }
 interface GetResponseClients{
 _embedded:{
   clients: Client[];
 }
+
 
 }
 interface GetResponseClientss{

@@ -16,11 +16,13 @@ import { ProductUpdateComponent } from './product-items/product-update/product-u
 import { RegisterAdminComponent } from './espace-admin/register-admin/register-admin.component';
 import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.component';
 import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detail-prod-admin.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
    {
     path:'updateprod/:id',
+    canActivate:[AuthGuard],
     component: ProductUpdateComponent 
 
   }, 
@@ -41,21 +43,29 @@ const routes: Routes = [
   },
   {
     path:'adminhome',
+    canActivate:[AuthGuard],
+
     component: AdminHomeComponent
 
   },
   {
     path:'adminhome/:id',
+    canActivate:[AuthGuard],
+
     component: AdminHomeComponent
 
   },
   {
     path:'listeclients/:id',
+    canActivate:[AuthGuard],
+
     component: ListeClientComponent
 
   },
   {
     path:'update/:id',
+    canActivate:[AuthGuard],
+
     component: UpdateClientComponent
 
   },
@@ -66,11 +76,15 @@ const routes: Routes = [
   },
   {
     path:'ajoutcatecorie',
+    canActivate:[AuthGuard],
+
     component: AjoutCategorieComponent
 
   },
   {
     path:'ajoutproduit/:id',
+    canActivate:[AuthGuard],
+
     component: CreateProductComponent
 
   },
@@ -81,25 +95,35 @@ const routes: Routes = [
   },
   {
     path:'cart-details',
+    canActivate:[AuthGuard],
+
     component: CartDetailsComponent
 
   },
   {
     path:'clients',
+    canActivate:[AuthGuard],
+
     component: ClientListeComponent
 
   }, {
     path:'adminhomep/:id',
+    canActivate:[AuthGuard],
+
     component: DetailProdAdminComponent
 
   },
   {
-    path:'produits/:id',
+    path:'produits/:id',    
+    canActivate:[AuthGuard],
+
     component: ProductDetailsComponent
 
   },
   {
     path:'produits',
+    canActivate:[AuthGuard],
+
     component: ProductsHomeComponent
 
   },
@@ -110,6 +134,8 @@ const routes: Routes = [
   },
   {
     path:'categorie/:id',
+    canActivate:[AuthGuard],
+
     component:    ProductsHomeComponent
 
   }, 

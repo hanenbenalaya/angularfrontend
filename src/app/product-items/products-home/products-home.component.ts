@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-products-home',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-home.component.css']
 })
 export class ProductsHomeComponent implements OnInit {
-  constructor(){}
+  constructor(private cltservice: ClientService){}
     
 
   ngOnInit() {
    
   }
+  deconnect(){
+    this.cltservice.logout();
 
+  }
   
 }

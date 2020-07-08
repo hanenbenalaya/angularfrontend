@@ -16,7 +16,7 @@ numpage:number=0;
 pages:Array<number>
 id:number=0
 
-  constructor(private activatedRoutr: ActivatedRoute,private clientService:ClientService, 
+  constructor(private cltservice: ClientService,private activatedRoutr: ActivatedRoute,private clientService:ClientService, 
     private _activitedRouter: ActivatedRoute,private router: Router ) { }
 
     ngOnInit(): void {
@@ -27,6 +27,10 @@ console.log("page num:", this.id);
 
 
 
+    }
+    deconnect(){
+      this.cltservice.logout();
+  
     }
     ListClients(n: number){
       this.clientService.getClients(n).subscribe(

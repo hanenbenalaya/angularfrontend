@@ -31,6 +31,7 @@ import { ProductUpdateComponent } from './product-items/product-update/product-u
 import { RegisterAdminComponent } from './espace-admin/register-admin/register-admin.component';
 import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.component';
 import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detail-prod-admin.component';
+import { AuthGuard } from './guards/auth.guard';
 //import {JwPaginationComponent} from 'jw-angular-pagination'
 @NgModule({
   declarations: [
@@ -97,6 +98,8 @@ import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detai
   providers: [
     ClientService,
     ProductService,
+    AuthGuard,
+
     
   ],
   bootstrap: [AppComponent]

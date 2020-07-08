@@ -21,12 +21,16 @@ authClt(){
 
   this.clientService.auth(this.auth).subscribe(data=>this.idclt=data);
    
-    localStorage.setItem("client id ",JSON.stringify(this.idclt))
+    localStorage.setItem("currentUser",JSON.stringify(this.idclt))
     console.log(this.idclt);
     if(this.idclt)
     {this.router.navigate(['/produits/0']);
     this.notfound=false}
     else 
     this.notfound=true;
+}
+logout() {
+  // remove user from local storage to log user out
+  localStorage.removeItem('client id');
 }
 }
