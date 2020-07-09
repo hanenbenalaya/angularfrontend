@@ -13,6 +13,7 @@ export class ClientService {
   private baseUrl="http://localhost:8090/api/v1/clients";
   private baseUrl2="http://localhost:8090/api/v1/clientauth";
   private baseUrl3="http://localhost:8090/api/v1/clientauthAdm";
+  y:Observable<object>
 
    x:Observable<object>
    data:Observable<Client[]>
@@ -39,8 +40,10 @@ export class ClientService {
   }
 
 
-  createClient(client: Client): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, client);
+  createClient(client: Client): Observable<any> {
+    this.y= this.http.post(`${this.baseUrl}`, client)
+console.log("y :",this.y);
+    return this.y;
    
   }
 

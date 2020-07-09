@@ -1,27 +1,56 @@
 
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <br>
+  <br>
+  <br>
+  
+ 
+  <ul class="navbar-nav ">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Acceuil<span class="sr-only">(current)</span></a>
+    </li>
+   </ul>
+   <ul class="navbar-nav ">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login" >Espace Client</a>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+        
+    </ul>
+  </nav>
+
+<div class="bg-img">
+  <br>
+  <br>
+  <br>
+  <br>
+
 <div class="container col-lg-6">
-    <h1 class="text-center">Connexion Admin</h1>
+    <h1 class="text-center" style="color: blanchedalmond;">Connexion Admin</h1>
     <div class="card">
       <div class="card-body">
         <form  (ngSubmit)="authClt()"class="form-group">
           
           <div class="form-group">
-            <label for="email">Email :</label>
+            <label for="email" style="color: blanchedalmond;">Email :</label>
             <input type="text" class="form-control" id="email"   required [(ngModel)]="auth.email"
               name="email">
           </div>
           <div class="form-group">
-            <label for="pwd">Mot de pass:</label>
+            <label for="pwd" style="color: blanchedalmond;">Mot de pass:</label>
             <input type="password" class="form-control" id="pwd"  required [(ngModel)]="auth.pwd"
               name="pwd">
           </div>
-          <button type="submit" class="btn btn-success">Se connecter</button> <button routerLink="/registeradmin" class="btn btn-success ml-2" >S'inscrire</button>
+          <button type="submit" class="btn btn-primary" style="color: blanchedalmond;">Se connecter</button> <button style="color: blanchedalmond;" routerLink="/registeradmin" class="btn btn-primary ml-2" >S'inscrire</button>
         </form>
       </div>
     </div>
     <div *ngIf="notfound" class="col-md-12 alert alert-warning mt-3">
       e-mail ou mot de passe non reconnu
       
-        </div> 
+        </div>
+        <br>
+         
   </div>
-  
+ 
+</div>

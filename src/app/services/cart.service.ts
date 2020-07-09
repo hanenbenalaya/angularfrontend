@@ -69,7 +69,7 @@ this.totalQuantity.next(totaleQuantityValue);
    }
    confirmcmd(cmd:CommandItems):Observable<Object>{
     console.log("commande a envoyé:",cmd)
-
+   
     return this.http.post(`${this.baseUrl}`,cmd);
    
 

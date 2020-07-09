@@ -4,6 +4,8 @@ import { CartService } from 'src/app/services/cart.service';
 import { CommandItems } from 'src/app/model/command-items';
 import { Produit } from 'src/app/model/produit';
 import { Prod } from 'src/app/model/prod';
+import { ClientService } from 'src/app/services/client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-details',
@@ -18,7 +20,7 @@ cmd:CommandItems=new CommandItems
 ids:string
 rslt:any
 i: number;
-  constructor(private cartService:CartService) {
+  constructor(private cltservice: ClientService,private cartService:CartService,private router: Router) {
    this.ids =localStorage.getItem("client id ");
    console.log("current client id :" ,this.ids)
  
@@ -27,7 +29,14 @@ i: number;
    }
 
   ngOnInit(): void {
+    this.ids =localStorage.getItem("currentUser");
+   console.log("current client id :" ,this.ids)
+ 
     this.cartDetails();
+  }
+  deconnect(){
+    this.cltservice.logout();
+  
   }
   cartDetails() {
 this.cartItems=this.cartService.cartItems;
@@ -72,7 +81,8 @@ confirmCmd(){
   this.cartService.confirmcmd(this.cmd).subscribe(data=>this.rslt=data);
   console.log("les donneés recu",this.rslt);
 
-
+  
+ 
 
 }
 

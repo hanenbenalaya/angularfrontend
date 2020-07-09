@@ -17,6 +17,7 @@ import { RegisterAdminComponent } from './espace-admin/register-admin/register-a
 import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.component';
 import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detail-prod-admin.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AProposComponent } from './components/a-propos/a-propos.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,10 @@ const routes: Routes = [
     canActivate:[AuthGuard],
 
     component: UpdateClientComponent
+  },
+  {
+    path:'apropos',
+    component: AProposComponent
 
   },
   {

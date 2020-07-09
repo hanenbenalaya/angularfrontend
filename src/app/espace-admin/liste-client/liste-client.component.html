@@ -34,35 +34,37 @@
         </ul>
     
       </nav>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <h3 class="text-center">liste des clients</h3>
+      
+      
+      <div class="con">
+        <br>
+        <br>
+       <br><br> 
+      <h3 class="text-center" style="color: blanchedalmond;">liste des clients</h3>
+      <br>
   <div class="container">
       
 <table class="table table-hover">
     <thead class="thead-dark">
     <tr >
         
-        <th scope="col">Nom </th>
-        <th scope="col">Prenom</th>
-        <th scope="col">email</th>
-        <th scope="col">telephone</th>
+        <th scope="col" style="color: rgb(29, 136, 179);">Nom </th>
+        <th scope="col" style="color: rgb(29, 136, 179);">Prenom</th>
+        <th scope="col" style="color: rgb(29, 136, 179);">email</th>
+        <th scope="col" style="color: rgb(29, 136, 179);">telephone</th>
         <th scope="col"></th>
     </tr>
     </thead>
   
     <tbody>
         <tr scope="row" *ngFor="let client of clients">
-            <td >{{ client.nom}}
+            <td style="color: blanchedalmond;">{{ client.nom}}
                  </td>
-            <td>{{ client.prenom}}</td>
-            <td>{{ client.email }}</td>
-            <td>{{ client.telephone}}</td>
-            <td><button (click)="deleteclient(client.clt_id)" class="btn btn-danger">Supprimer</button>
-                <button (click)="updateclient(client.clt_id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
+            <td style="color: blanchedalmond;">{{ client.prenom}}</td>
+            <td style="color: blanchedalmond;">{{ client.email }}</td>
+            <td style="color: blanchedalmond;">{{ client.telephone}}</td>
+            <td><button style="color: blanchedalmond;"(click)="deleteclient(client.clt_id)" class="btn btn-danger">Supprimer</button>
+                <button  style="color: blanchedalmond;"(click)="updateclient(client.clt_id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
             </td>
 
              </tr>
@@ -76,4 +78,4 @@
     </li>
   </ul>
 
-  </div>
+  </div></div>

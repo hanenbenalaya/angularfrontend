@@ -1,20 +1,21 @@
 
 
 <div class="row">
-<div class="col-lg-5 col-md-4 mb-6" *ngFor="let produit of produits" >
-     <div class="card h-100">
+<div class="col-lg-5 col-md-4 mb-6 " *ngFor="let produit of produits" >
+     <div class="card h-100 mb-6 ">
          <a  routerLink="/produits/{{produit.idProduit}}"><img class="card-img-top "  [src]="produit.urlImage_produit"  ></a>
           <div class="card-body">
            <h4 class="card-title">
            <a routerLink="/produits/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
             </h4>
-            <h5>{{produit.prixProduit|currency:'TND'}}</h5>
-            <p class="card-text">{{ produit.description_produit }}</p>
+            <h5 style="color: blanchedalmond;">{{produit.prixProduit|currency:'TND'}}</h5>
+            <p class="card-text" style="color: blanchedalmond;">{{ produit.description_produit }}</p>
           </div>
          
           <div class="card-footer">
-          <button type="button" class="btn btn-primary float-right" (click)="addToCart(produit)">Ajouter Panier </button>      </div>
+          <button type="button" style="color: blanchedalmond;" class="btn btn-primary float-right" (click)="addToCart(produit)">Ajouter Panier </button>      </div>
          </div>
+         
   </div>
 </div>
 <ul class="nav nav-pills">

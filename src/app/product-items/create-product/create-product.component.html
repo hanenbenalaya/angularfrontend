@@ -1,42 +1,68 @@
-
-<div class="container col-lg-6">
-    <h3  class="text-center">Ajouter Produit</h3>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <br>
+  <br>
+  <br>
+  
+ 
+ 
+   <ul class="navbar-nav ">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ajoutcatecorie" >Retour</a>
+    </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+        
+    </ul>
+  </nav>
+ 
+<div class="con">
+  <br>
+  
+  
+  
+<div class="container col-lg-6 ">
+    <h3  class="text-center" style="color: blanchedalmond;">Ajouter Produit</h3>
     <div class="card">
         <div class="card-body">
     <div [hidden]="submitted" style="width: 400px;">
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Nom Produit</label>
+          <label for="name" style="color: blanchedalmond;">Nom Produit</label>
           <input type="text" class="form-control" id="nom" required [(ngModel)]="produit.nomProduit" name="nomProduit">
         </div>
     
         <div class="form-group">
-          <label for="name">Prix Produit</label>
+          <label for="name" style="color: blanchedalmond;">Prix Produit</label>
           <input type="text" class="form-control" id="prix" required [(ngModel)]="produit.prixProduit" name="prixProduit" >
         </div>
     
         <div class="form-group">
-          <label for="name">Image Produit</label>
+          <label for="name" style="color: blanchedalmond;">Image Produit</label>
           <input 
           *ngIf="!profilePicture" type="file" 
-          (change)="handleProfilePictureInput($event.target.files)">         <img class="profile-picture" [src]="profilePicture">
+          (change)="handleProfilePictureInput($event.target.files)">  <img class="profile-picture" [src]="profilePicture">
          
         </div>
         
         <div class="form-group">
-            <label for="name">Description</label>
+            <label for="name" style="color: blanchedalmond;">Description</label>
             <input type="text" class="form-control" id="description" required [(ngModel)]="produit.description_produit" name="description_produit">
           </div>
         
         
           <div class="form-group">
-            <label for="name">Quantité en stock</label>
+            <label for="name" style="color: blanchedalmond;">Quantité en stock</label>
             <input type="text" class="form-control" id="quantitéstock" required [(ngModel)]="produit.quantite_stock" name="quantite_stock" >
           </div>
     
-        <button type="submit" class="btn btn-success">Ajouter</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
       </form>
     </div>
     
    
-    </div></div></div>
+    </div></div>
+    <br><br>
+    
+    <br><br></div>
+    
+
+  </div>

@@ -12,7 +12,8 @@ export class CreateClientComponent implements OnInit {
    
   role:String="clt";
   client :Client = new Client();
-  
+  rslt: any;
+  done:boolean=true
   submitted = false;
   constructor(private clientService: ClientService,
     private router: Router) { 
@@ -27,24 +28,25 @@ export class CreateClientComponent implements OnInit {
   newClient(): void {
     this.submitted = false;
     this.client = new Client();
+    this.client.role=this.role;
   }
 
   save() {
-    this.clientService.createClient(this.client)
-      .subscribe(data => console.log(data), error => console.log(error));
+    this.clientService.createClient(this.client).subscribe(data => this.rslt=data);
+      console.log("resultat",this.rslt)
+      
       console.log("client created",this.client);
+      this.submitted = true;
+      this.router.navigate(['/login']);
+    
     this.client = new Client();
-    this.gotoList();
+   
   }
 
   onSubmit() {
-    this.submitted = true;
     this.save(); 
        
   }
 
-  gotoList() {
-    this.router.navigate(['/login']);
-  }
-
+  
 }
