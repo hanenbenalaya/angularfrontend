@@ -18,6 +18,9 @@ import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.comp
 import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detail-prod-admin.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AProposComponent } from './components/a-propos/a-propos.component';
+import { AddClientComponent } from './espace-admin/add-client/add-client.component';
+import { AcceuillComponent } from './components/acceuill/acceuill.component';
+import { DetailprodAcceuilComponent } from './components/detailprod-acceuil/detailprod-acceuil.component';
 
 
 const routes: Routes = [
@@ -68,6 +71,10 @@ const routes: Routes = [
     canActivate:[AuthGuard],
 
     component: UpdateClientComponent
+  },  {
+    path:'addclient',
+    component: AddClientComponent
+
   },
   {
     path:'apropos',
@@ -111,6 +118,24 @@ const routes: Routes = [
 
     component: ClientListeComponent
 
+  },{
+    path:'acceuilp/:id',
+    
+
+    component: DetailprodAcceuilComponent
+
+  },{
+    path:'acceuil',
+    
+
+    component: AcceuillComponent
+
+  },{
+    path:'acceuil/:id',
+    
+
+    component: AcceuillComponent
+
   }, {
     path:'adminhomep/:id',
     canActivate:[AuthGuard],
@@ -133,6 +158,11 @@ const routes: Routes = [
 
   },
   {
+    path:'searchh/:keyword',
+    component:  AcceuillComponent
+
+  },
+  {
     path:'search/:keyword',
     component: ProductsHomeComponent
 
@@ -147,7 +177,7 @@ const routes: Routes = [
 
   {
     path:'',
-   redirectTo:'/login',pathMatch:"full"
+   redirectTo:'/acceuil',pathMatch:"full"
 
   },
   {

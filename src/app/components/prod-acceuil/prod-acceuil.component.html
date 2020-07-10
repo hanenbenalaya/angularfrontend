@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <div class="col-lg-5 col-md-4 mb-6" *ngFor="let produit of produits" >
+         <div class="card h-100">
+             <a  routerLink="/acceuilp/{{produit.idProduit}}"><img class="card-img-top "  [src]="produit.urlImage_produit"  ></a>
+              <div class="card-body">
+               <h4 class="card-title">
+               <a routerLink="/acceuilp/{{produit.idProduit}}">{{ produit.nomProduit}}</a>
+                </h4>
+                <h5 style="color: blanchedalmond;">{{produit.prixProduit|currency:'TND'}}</h5>
+                <p class="card-text" style="color: blanchedalmond;">{{ produit.description_produit }}</p>
+              </div>
+              
+            </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    
+    <ul class="nav nav-pills">
+      <li class="nav-item" *ngFor="let p of pages ;let i=index">
+        <a class="nav-link active ml-1" (click)="ngOnInit()"(click)="fixnumpage(i)"
+        routerLinkActiv="bg-primary text-white font-weight-bold" >{{i}}</a>
+      </li>
+    </ul>
+      <div *ngIf="produits?.length==0" class="col-md-12 alert alert-warning mt-3">
+      
+    Aucun produit trouvé
+      </div> 
+    

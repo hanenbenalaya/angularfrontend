@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <br>
+    <br>
+    <br>
+    
+   
+   
+     <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/listeclients/0" >Retour</a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      
+      </ul>
+    </nav>
+<div class="bg-img">
+    <br>
+    <br>
+    <br>
+    <br>
+  
+  <div class="container col-lg-6">
+  <h3  class="text-center" style="color: blanchedalmond;">Ajouter Client</h3>
+  <div class="card">
+      <div class="card-body">
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name" style="color: blanchedalmond;">Nom</label>
+        <input type="text" class="form-control" id="nom" required [(ngModel)]="client.nom" name="nom">
+      </div>
+  
+      <div class="form-group">
+        <label for="name" style="color: blanchedalmond;">Prénom</label>
+        <input type="text" class="form-control" id="prenom" required [(ngModel)]="client.prenom" name="prenom" >
+      </div>
+  
+      <div class="form-group">
+        <label for="name" style="color: blanchedalmond;">Email</label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="client.email" name="email" >
+      </div>
+      
+      <div class="form-group">
+          <label for="name" style="color: blanchedalmond;">Numéro de telephone</label>
+          <input type="text" class="form-control" id="telephone" required [(ngModel)]="client.telephone" name="telephone">
+        </div>
+        
+      <div class="form-group">
+          <label for="name" style="color: blanchedalmond;">Mot de passe</label>
+          <input type="password" class="form-control" id="mdp" required [(ngModel)]="client.mdp" name="mdp" >
+        </div>
+  
+      <button type="submit" style="color: blanchedalmond;" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>
+  <div *ngIf="!done" class="col-md-12 alert alert-warning mt-3">
+    Ce mail existe déjà!
+      </div> 
+  <div [hidden]="!submitted">
+    <h4>Inscription réussite!</h4>
+  </div>
+  </div></div></div></div>

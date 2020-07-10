@@ -33,6 +33,12 @@ import { LoginAdminComponent } from './espace-admin/login-admin/login-admin.comp
 import { DetailProdAdminComponent } from './espace-admin/detail-prod-admin/detail-prod-admin.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AProposComponent } from './components/a-propos/a-propos.component';
+import { AddClientComponent } from './espace-admin/add-client/add-client.component';
+import { AcceuillComponent } from './components/acceuill/acceuill.component';
+import { CategorieAcceuilComponent } from './components/categorie-acceuil/categorie-acceuil.component';
+import { ProdAcceuilComponent } from './components/prod-acceuil/prod-acceuil.component';
+import { DetailprodAcceuilComponent } from './components/detailprod-acceuil/detailprod-acceuil.component';
+import { SearchAcceuilComponent } from './components/search-acceuil/search-acceuil.component';
 //import {JwPaginationComponent} from 'jw-angular-pagination'
 @NgModule({
   declarations: [
@@ -85,6 +91,18 @@ import { AProposComponent } from './components/a-propos/a-propos.component';
     DetailProdAdminComponent,
     
     AProposComponent,
+    
+    AddClientComponent,
+    
+    AcceuillComponent,
+    
+    CategorieAcceuilComponent,
+    
+    ProdAcceuilComponent,
+    
+    DetailprodAcceuilComponent,
+    
+    SearchAcceuilComponent,
     
     
     

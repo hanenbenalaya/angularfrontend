@@ -23,7 +23,7 @@ id:number=0
       this.id=+this.activatedRoutr.snapshot.paramMap.get('id');
 console.log("page num:", this.id);
       this.ListClients(this.id);
-     this.pages=new Array(3);
+     this.pages=new Array(2);
 
 
 

@@ -1,8 +1,4 @@
-.profile-picture{
-	width: 200px;
-	height: 200px;
-}
-.con {
+.container {
     background-color:transparent;
     background-image: url(src\assets\tenorr.gif);
     background-repeat:no-repeat ;
@@ -12,7 +8,6 @@
    background-size: cover;
     
 }
-
 .card{
     background-image: url(src\assets\tenorr.gif);
     background-repeat:no-repeat ;
@@ -21,3 +16,14 @@
    -o-background-size: cover;
    background-size: cover;
 }
+.bg-img{
+   
+    min-height: 100vh;
+   width: 100%;
+   background: url(src\assets\tenorr.gif) ;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   }
+   

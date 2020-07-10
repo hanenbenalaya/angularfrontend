@@ -1,0 +1,10 @@
+.card {
+    background-color:transparent;
+    background-image: url(src\assets\tenorr.gif);
+    background-repeat:no-repeat ;
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+    
+}
